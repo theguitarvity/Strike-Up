@@ -24,6 +24,11 @@ abstract class AbstractRepository implements AbstractRepositoryInterface
         return $this->modelName::find($id);
     }
 
+    public function model()
+    {
+        return $this->modelName;
+    }
+
     public function all(): Collection
     {
         return $this->modelName::all();

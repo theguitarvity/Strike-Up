@@ -16,4 +16,6 @@ interface AbstractRepositoryInterface
     public function delete(array $ids):bool;
 
     public function create(array $data);
+
+    public function model();
 }

@@ -16,23 +16,23 @@ class CategoriaController
         return response()->json([
             [
                 'titulo' => 'Educacao',
-                'link' => route('educacao.show'),
-                'icone' => ''
+                'link'   => route('educacao.show'),
+                'icone'  => ''
             ],
             [
                 'titulo' => 'Saúde',
-                'link' => '',//route('saude.show'),
-                'icone' => ''
+                'link'   => '',//route('saude.show'),
+                'icone'  => ''
             ],
             [
                 'titulo' => 'Segurança',
-                'link' => '',//route('seguranca.show')
-                'icone' => ''
+                'link'   => '',//route('seguranca.show')
+                'icone'  => ''
             ],
             [
                 'titulo' => 'Infraestrutura',
-                'link' => '',//route('infra.show')
-                'icone' => ''
+                'link'   => '',//route('infra.show')
+                'icone'  => ''
             ]
         ]);
     }

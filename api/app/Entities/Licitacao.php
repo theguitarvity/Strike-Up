@@ -6,7 +6,9 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
 class Licitacao extends Eloquent
 {
-    protected $fillable = ['valor', 'codigo'];
+    protected $table = 'licitacao';
+
+    protected $fillable = ['valor', 'valor_realizado', 'codigo', 'orgao_id', 'empresa_id'];
 
     public function orgao()
     {
