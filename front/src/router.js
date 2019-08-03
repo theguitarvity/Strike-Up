@@ -21,7 +21,7 @@ export default new Router({
       component:Sobre
     },
     {
-      path:"/orgao",
+      path:"/orgao/:categoria?",
       name:"orgao",
       component: Orgao
     }

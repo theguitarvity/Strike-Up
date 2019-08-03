@@ -54,7 +54,11 @@ export default {
   methods: {
     irParaDetalhes(categoria) {
       const {link, icone} = categoria
-      this.$router.push({name: 'orgao', params: {link, icone}})
+      let chave = Object.keys(this.categorias).find(key => this.categorias[key] == categoria)
+      this.$router.push({
+        path:`/orgao/${chave}`,
+        params: {link, icone}
+        })
     }
   }
 };

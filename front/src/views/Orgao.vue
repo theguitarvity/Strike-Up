@@ -48,18 +48,21 @@ export default {
         Licitacoes
     },
     created(){
-        this.icone = this.$route.params.icone
+        
         this.retornaLicitacoes()
     },
     methods:{
         retornaLicitacoes(){
-            const {link} = this.$route.params
+            //const {link} = this.$route.params
+            let link = `http://localhost:86/api/classificacao/${this.$route.params.categoria}`;
             axios.get(link).then((response)=>{
                 console.log(response.data)
                 this.licitacoes = response.data.orgaos.licitacoes;
                 this.avaliacao = parseFloat(response.data.nota);
                 this.rangAvaliacao = parseInt(response.data.nota);
-                this.titulo = response.data.titulo
+                this.titulo = response.data.categoria.titulo
+                this.icone = response.data.categoria.icone;
+                
             });
         }
     },
