@@ -10,20 +10,36 @@
                         </VCard>
                         <vContainer style="margin-left:5%;">
                             <h4>Nº de licitações:</h4>
-                            <h4>Avaliação: 5.0</h4>
+                            <h4>Avaliação: {{avaliacao}}</h4>
+                        </vContainer>
+                        <vContainer>
+                            <VIcon v-for="index in avaliacao" :key="index" style="color:orange">mdi-star</VIcon>
                         </vContainer>
                         
                     </vContainer>
                     
                 </VCard>
+                <Licitacoes />
             </VFlex>
         </VLayout>
     </vContainer>
 </template>
 
 <script>
+import Licitacoes from '@/components/Licitacoes.vue';
 export default {
-    name:'orgao'
+    name:'orgao',
+    data(){
+       return{
+            avaliacao:5
+       }
+    },
+    props:{
+        
+    },
+    components:{
+        Licitacoes
+    }
 }
 </script>
 
