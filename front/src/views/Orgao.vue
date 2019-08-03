@@ -9,7 +9,7 @@
                             <VCardText>Educação</VCardText>
                         </VCard>
                         <vContainer style="margin-left:5%;">
-                            <h4>Nº de licitações:</h4>
+                            <h4>Nº de licitações: {{licitacoes.length}}</h4>
                             <h4>Avaliação: {{avaliacao}}</h4>
                         </vContainer>
                         <v-rating v-model="avaliacao" readonly half-increments ></v-rating>
@@ -20,7 +20,8 @@
                     </vContainer>
                     
                 </VCard>
-                <Licitacoes v-bind:licitacoes="licitacoes" />
+                <VSpacer/>
+                <Licitacoes v-bind:licitacoes="licitacoes" style="margin-top:1em"/>
             </VFlex>
         </VLayout>
     </vContainer>
@@ -49,9 +50,9 @@ export default {
     },
     methods:{
         retornaLicitacoes(){
-            let licitacoes = axios.get('http://localhost:86/api/educacao/classificacao/').then((response)=>{
+            let licitacoes = axios.get('http://localhost:86/api/classificacao/educacao').then((response)=>{
                 console.log(response.data)
-                this.licitacoes = response.data.orgaos;
+                this.licitacoes = response.data.orgaos.licitacoes;
                 this.avaliacao = parseFloat(response.data.nota);
                 this.rangAvaliacao = parseInt(response.data.nota);
                 
