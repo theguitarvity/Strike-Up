@@ -11,6 +11,8 @@ use App\Repositories\Contracts\OrgaoInterfaceRepository;
 use App\Repositories\EmpresaRepository;
 use App\Repositories\LicitacaoRepository;
 use App\Repositories\OrgaoRepository;
+use App\Services\ConsultaEmpresaService;
+use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,7 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $guzzleClient = new Client(['timeout' => 1200, 'read_timeout' => 1200]);
+
+        $this->app->bind(ConsultaEmpresaService::class, function ($app) use ($guzzleClient) {
+            return new ConsultaEmpresaService($guzzleClient);
+        });
     }
 
     /**
