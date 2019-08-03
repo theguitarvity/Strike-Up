@@ -12,6 +12,7 @@ use App\Repositories\EmpresaRepository;
 use App\Repositories\LicitacaoRepository;
 use App\Repositories\OrgaoRepository;
 use App\Services\ConsultaEmpresaService;
+use App\Services\ConsultaSociosService;
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
@@ -29,6 +30,12 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ConsultaEmpresaService::class, function ($app) use ($guzzleClient) {
             return new ConsultaEmpresaService($guzzleClient);
         });
+
+        $this->app->bind(ConsultaSociosService::class, function ($app) use ($guzzleClient) {
+            return new ConsultaSociosService($guzzleClient);
+        });
+
+
     }
 
     /**

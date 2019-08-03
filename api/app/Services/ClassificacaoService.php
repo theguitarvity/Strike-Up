@@ -46,7 +46,7 @@ class ClassificacaoService
 
         foreach ($categorias as $indice => $categoria) {
             if($tipo == $indice) {
-                $classificacao['titulo'] = $categoria['titulo'];
+                $classificacao['categoria'] = $categoria;
                 $classificacao['nota'] = $this->obterNotaGeralDaCategoria($categoria);
                 $classificacao['orgaos'] = [];
                 foreach ($categoria['orgaos'] as $nomeOrgao) {

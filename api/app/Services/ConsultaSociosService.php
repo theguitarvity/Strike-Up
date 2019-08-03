@@ -6,7 +6,7 @@ namespace App\Services;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 
-class ConsultaEmpresaService
+class ConsultaSociosService
 {
 
     /**
@@ -23,17 +23,16 @@ class ConsultaEmpresaService
         $this->client = $guzzleClient;
     }
 
-    public function obterInformacoesEmpresa(string $cnpj): array
+    public function obterInformacoesSocios(string $nomeSocio): array
     {
         $parametros = [
             'query' => [
-                'cnpj' => $cnpj,
-                'token' => config('constantes.empresa_webservice.token')
+                'nome_socio' => $nomeSocio
             ]
         ];
 
         try {
-            $response = $this->client->request('GET', config('constantes.empresa_webservice.url'), $parametros)
+            $response = $this->client->request('GET', config('constantes.socios_webservice.url'), $parametros)
             ->getBody()->getContents();
         } catch (GuzzleException $e) {
             throw $e;
