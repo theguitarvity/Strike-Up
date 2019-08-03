@@ -14,7 +14,9 @@
                     </v-expansion-panel-header>
 
                     <v-expansion-panel-content>
-                        <h4>{{licitacao.titulo}}</h4>
+                        <h5>Empresa: {{licitacao.razao_social }}</h5>
+                        <h5>CNPJ: {{licitacao.cnpj}}</h5>
+
                         <vContainer grid-list-sm>
                            <VFlex>
                                 <v-chip style="margin:1px" v-for=" (tag, index) in licitacao.tags" :key="index">{{tag}} </v-chip>
