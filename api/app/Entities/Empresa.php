@@ -12,6 +12,6 @@ class Empresa extends Eloquent
     
     public function licitacoes()
     {
-        return $this->hasMany(Licitacao::class, 'licitacao_id', 'id');
+        return $this->hasMany(Licitacao::class, 'licitacao_id', '_id');
     }
 }

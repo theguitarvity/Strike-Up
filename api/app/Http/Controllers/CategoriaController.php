@@ -13,27 +13,12 @@ class CategoriaController
 {
     public function obterCategorias()
     {
-        return response()->json([
-            [
-                'titulo' => 'Educacao',
-                'link'   => route('educacao.show'),
-                'icone'  => ''
-            ],
-            [
-                'titulo' => 'Saúde',
-                'link'   => '',//route('saude.show'),
-                'icone'  => ''
-            ],
-            [
-                'titulo' => 'Segurança',
-                'link'   => '',//route('seguranca.show')
-                'icone'  => ''
-            ],
-            [
-                'titulo' => 'Infraestrutura',
-                'link'   => '',//route('infra.show')
-                'icone'  => ''
-            ]
-        ]);
+
+        $categorias = config('constants.categorias');
+
+        foreach ($categorias as $key => $categoria) {
+            $categorias[$key]['link'] = route('classificacao.show', ['tipo' => $key]);
+        }
+        return response()->json($categorias);
     }
 }
