@@ -15,3 +15,6 @@ use Illuminate\Http\Request;
 
 Route::get('/classificacao/{tipo}', 'ClassificacaoController@obterClassificacao')->name('classificacao.show');
 Route::get('/categorias', 'CategoriaController@obterCategorias')->name('categorias.show');
+
+Route::get('/consulta-empresa', 'ConsultaEmpresaController@obterInformacoesEmpresa')->name('empresa.consulta');
+
