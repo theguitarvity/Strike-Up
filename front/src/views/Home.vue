@@ -3,13 +3,13 @@
     <v-layout wrap>
         <v-flex
           style="padding: 5px" 
-          v-for="categoria in categorias"
-          :key="categoria.id"
+          v-for="(categoria, key) in categorias"
+          :key="key"
           xs6
         >
-          <v-card @click="irParaDetalhes(categoria.id)" class="card" height="150px" link>
+          <v-card @click="irParaDetalhes(categoria)" class="card" height="150px" link>
             <v-icon color="purple" :size="80">{{categoria.icone}}</v-icon>
-            <span>{{categoria.nome}}</span>
+            <span>{{categoria.titulo}}</span>
           </v-card>
         </v-flex>
     </v-layout>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
   name: 'home',
   data() {
@@ -46,9 +46,15 @@ export default {
       ]
     }
   },
+  created() {
+    axios.get('http://localhost:86/api/categorias').then(res => {
+      this.categorias = res.data
+    })
+  },
   methods: {
-    irParaDetalhes(id) {
-      // this.$router.push({name: 'orgao'})
+    irParaDetalhes(categoria) {
+      const {link, icone} = categoria
+      this.$router.push({name: 'orgao', params: {link, icone}})
     }
   }
 };
@@ -56,7 +62,7 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  margin: 3rem 0;
+  margin: 1rem 0;
   .card{
     display: flex;
     flex-direction: column;
