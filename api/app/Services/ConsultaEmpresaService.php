@@ -24,7 +24,7 @@ class ConsultaEmpresaService
         $this->client = $guzzleClient;
     }
 
-    public function obterInformacoesEmpresa(string $cnpj): string
+    public function obterInformacoesEmpresa(string $cnpj): array
     {
         $parametros = [
             'query' => [
@@ -41,7 +41,7 @@ class ConsultaEmpresaService
             throw $e;
         }
 
-        return $response;
+        return json_decode($response, true);
     }
 
 }
