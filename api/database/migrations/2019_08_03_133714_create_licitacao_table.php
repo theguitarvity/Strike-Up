@@ -16,10 +16,12 @@ class CreateLicitacaoTable extends Migration
         Schema::create('licitacao', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->decimal('valor');
-            $table->unsignedBigInteger('codigo')->nullable();
-            $table->unsignedBigInteger('orgao_id');
-            $table->foreign('empresa_id')->references('id')->on('empresa');
-            $table->foreign('orgao_id')->references('id')->on('orgao');
+            $table->decimal('valor_realizado');
+            $table->string('codigo')->nullable();
+            $table->string('orgao_id');
+            $table->string('empresa_id');
+            $table->foreign('empresa_id')->references('_id')->on('empresa');
+            $table->foreign('orgao_id')->references('_id')->on('orgao');
             $table->timestamps();
         });
     }
