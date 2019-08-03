@@ -11,6 +11,7 @@ fiscaliza-api:
         - /bin/bash
         - -c
         - |
+          composer create-project laravel/laravel .
           composer install
           composer require jenssegers/mongodb
           php artisan key:generate

@@ -13,6 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/educacao/classificacao', 'ClassificacaoController@obterClassificacaoDeEducacao')->name('educacao.show');
+
+Route::get('/categorias', 'CategoriaController@obterCategorias')->name('categorias.show');
