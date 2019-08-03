@@ -4,11 +4,21 @@
                     v-for="licitacao in licitacoes"
                     :key="licitacao.id"
                 >
-                    <v-expansion-panel-header>Licitação {{licitacao.codigo}}</v-expansion-panel-header>
+                    <v-expansion-panel-header>Licitação {{licitacao.codigo}} 
+
+                        <VFlex style="padding-left:0.5rem;">
+                            <div class="circle" :style="{backgroundColor:licitacao.classificacao_risco.cor}" >
+
+                            </div>
+                        </VFlex>
+                    </v-expansion-panel-header>
+
                     <v-expansion-panel-content>
                         <h4>{{licitacao.titulo}}</h4>
                         <vContainer grid-list-sm>
-                            <v-chip style="margin:1px" v-for=" (tag, index) in licitacao.tags" :key="index">{{tag}} </v-chip>
+                           <VFlex>
+                                <v-chip style="margin:1px" v-for=" (tag, index) in licitacao.tags" :key="index">{{tag}} </v-chip>
+                            </VFlex>
                         </vContainer>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
@@ -36,5 +46,11 @@ export default {
 </script>
 
 <style>
-
+.circle{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    
+    
+}
 </style>
