@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mongo'),
 
     /*
     |--------------------------------------------------------------------------
@@ -61,6 +61,19 @@ return [
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
+        ],
+
+        'mongo' => [
+            'driver' => 'mongodb',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', 'mongo'),
+            'port' => env('DB_PORT', '27017'),
+            'database' => env('DB_DATABASE', 'licid'),
+            'username' => env('DB_USERNAME', 'root'),
+            'password' => env('DB_PASSWORD', 'root'),
+            'options'  => [
+                'database' => 'admin' // sets the authentication database required by mongo 3
+            ]
         ],
 
         'pgsql' => [
