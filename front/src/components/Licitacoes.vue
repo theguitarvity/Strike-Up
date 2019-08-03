@@ -22,44 +22,21 @@
 </template>
 
 <script>
+
+import axios from 'axios';
 export default {
     name: 'licitacoes',
+    created(){
+        
+    },
+    
     data(){
         return{
-            licitacoes:[
-                {
-                    id:0,
-                    codigo:'teste',
-                    titulo:'Empresa x',
-                    tags:[
-                        '#VenceuMaisLicitações',
-                        '#PoucoCapital'
-                    ]
-
-                },
-                {
-                    id:1,
-                    codigo:'teste',
-                    titulo:'Empresa x',
-                    tags:[
-                        '#VenceuMaisLicitações',
-                        '#PoucoCapital'
-                    ]
-
-                },
-                {
-                    id:2,
-                    codigo:'teste',
-                    titulo:'Empresa x',
-                    tags:[
-                        '#VenceuMaisLicitações',
-                        '#PoucoCapital'
-                    ]
-
-                }
-
-            ]
+            
         }
+    },
+    props:{
+        licitacoes:Array
     }
 }
 </script>
