@@ -55,26 +55,27 @@ class ImportarDadosNoSistemaService
         $dados[] = $this->obterCSV('compras-05-2019');
         $dados[] = $this->obterCSV('compras-06-2019');
 
-        foreach ($dados as $csv) {
-            $resultados = $csv->getRecords();
+        $existeLicitacao = $this->licitacaoRepository->model()::all()->first();
 
-            foreach ($resultados as $resultado) {
+        if(!$existeLicitacao) {
+            foreach ($dados as $csv) {
+                $resultados = $csv->getRecords();
 
-                $empresa = $this->empresaRepository->model()::where('cnpj', UtilHelper::formatarCpfOuCnpj($resultado['CPF_CNPJ']))->get()->first();
+                foreach ($resultados as $resultado) {
 
-                if(!$empresa) {
-                    $empresa = $this->empresaRepository->create(['cnpj' => UtilHelper::formatarCpfOuCnpj($resultado['CPF_CNPJ']), 'razao_social' => $resultado['Razao_Social']]);
-                }
+                    $empresa = $this->empresaRepository->model()::where('cnpj', UtilHelper::formatarCpfOuCnpj($resultado['CPF_CNPJ']))->get()->first();
 
-                $orgao = $this->orgaoRepository->model()::where('nome', $resultado['Orgao'])->get()->first();
+                    if(!$empresa) {
+                        $empresa = $this->empresaRepository->create(['cnpj' => UtilHelper::formatarCpfOuCnpj($resultado['CPF_CNPJ']), 'razao_social' => $resultado['Razao_Social']]);
+                    }
 
-                if(!$orgao) {
-                    $orgao = $this->orgaoRepository->create(['nome' => $resultado['Orgao']]);
-                }
+                    $orgao = $this->orgaoRepository->model()::where('nome', $resultado['Orgao'])->get()->first();
 
-                $licitacao = $this->licitacaoRepository->model()::where('codigo', $resultado['N_Processo'])->get()->first();
+                    if(!$orgao) {
+                        $orgao = $this->orgaoRepository->create(['nome' => $resultado['Orgao']]);
+                    }
 
-                if(!$licitacao) {
+
                     $this->licitacaoRepository->create(
                         [
                             'valor' => UtilHelper::obterNumero($resultado['Valor_Total_Previsto']),
