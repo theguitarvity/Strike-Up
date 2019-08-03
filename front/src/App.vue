@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app >
     <v-app-bar color="purple" app>
       <v-btn text icon color="white">
           <v-icon>menu</v-icon>
@@ -7,7 +7,7 @@
       <v-spacer></v-spacer>
     </v-app-bar>
 
-    <v-content>
+    <v-content style="background-color:#F7F6F6">
       <router-view />
     </v-content>
   </v-app>
@@ -25,5 +25,7 @@ export default {
 
 <style>
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons';
+
+
 </style>
 
