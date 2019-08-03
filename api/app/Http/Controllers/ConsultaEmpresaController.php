@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Services\ConsultaEmpresaService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ConsultaEmpresaController
 {

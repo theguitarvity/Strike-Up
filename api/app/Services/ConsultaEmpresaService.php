@@ -35,7 +35,7 @@ class ConsultaEmpresaService
 
         try {
             $response = $this->client->request('GET', config('constantes.empresa_webservice.url'), $parametros)
-                ->getBody()->__toString();
+            ->getBody()->getContents();
         } catch (GuzzleException $e) {
             Log::error($e->getMessage());
             throw $e;
