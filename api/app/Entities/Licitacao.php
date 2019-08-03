@@ -12,11 +12,11 @@ class Licitacao extends Eloquent
 
     public function orgao()
     {
-        return $this->belongsTo(Orgao::class, 'orgao_id', 'id');
+        return $this->belongsTo(Orgao::class, 'orgao_id', '_id');
     }
 
     public function empresa()
     {
-        $this->belongsTo(Empresa::class, 'empresa_id', 'id');
+        $this->belongsTo(Empresa::class, 'empresa_id', '_id');
     }
 }

@@ -12,6 +12,6 @@ class Orgao extends Eloquent
 
     public function licitacoes()
     {
-        $this->belongsTo(Licitacao::class, 'orgao_id', 'id');
+        $this->belongsTo(Licitacao::class, 'orgao_id', '_id');
     }
 }

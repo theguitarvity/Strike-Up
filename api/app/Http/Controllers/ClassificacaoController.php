@@ -9,30 +9,30 @@
 namespace App\Http\Controllers;
 
 
+use App\Services\ClassificacaoService;
+
 class ClassificacaoController extends Controller
 {
-    public function obterClassificacaoDeEducacao()
+
+    /**
+     * @var ClassificacaoService
+     */
+    private $service;
+
+    /**
+     * ClassificacaoController constructor.
+     * @param ClassificacaoService $service
+     */
+    public function __construct(ClassificacaoService $service)
     {
-        return response()->json(
-            [
-                'titulo' => 'Educação',
-                'nota'   => 4.7,
-                'orgaos' => [
-                        [
-                        'nome' => 'Secretaria de Educação',
-                        'nota' => 4.0,
-                        'licitacoes' => [
-                            'codigo' => 'TESTE',
-                            'classificacao_risco' => 'Médio',
-                            'tags' => [
-                                '#VenceuMaisLicitações',
-                                '#PoucoCapital'
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-        );
+        $this->service = $service;
+    }
+
+    public function obterClassificacao($tipo)
+    {
+        $classificacao = $this->service->obterClassificacao($tipo);
+
+        return response()->json($classificacao);
     }
 
     public function obterClassificacaoDeSeguranca()
