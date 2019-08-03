@@ -11,10 +11,10 @@ fiscaliza-api:
         - /bin/bash
         - -c
         - |
-          composer create-project laravel/laravel .
           composer install
           composer require jenssegers/mongodb
           php artisan key:generate
+          php artisan migrate
           php artisan serve --port=80 --host=0.0.0.0
 mongo:
     image: mongo
