@@ -23,7 +23,7 @@ return [
         ]
     ],
     'habitacao' => [
-        'titulo' => 'Habitacão',
+        'titulo' => 'Habitação',
         'icone'  => 'mdi-home',
         'orgaos' => [
             'AGEHAB'
