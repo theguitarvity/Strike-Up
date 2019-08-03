@@ -48,7 +48,7 @@ export default {
         Licitacoes
     },
     created(){
-        this.icone = this.$route.params.icone
+        
         this.retornaLicitacoes()
     },
     methods:{
@@ -60,7 +60,8 @@ export default {
                 this.licitacoes = response.data.orgaos.licitacoes;
                 this.avaliacao = parseFloat(response.data.nota);
                 this.rangAvaliacao = parseInt(response.data.nota);
-                this.titulo = response.data.titulo
+                this.titulo = response.data.categoria.titulo
+                this.icone = response.data.categoria.icone;
                 
             });
         }
