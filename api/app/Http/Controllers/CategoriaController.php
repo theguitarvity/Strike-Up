@@ -13,7 +13,7 @@ class CategoriaController
 {
     public function obterCategorias()
     {
-        $categorias = config('constants.categorias');
+        $categorias = config('constantes.categorias');
 
         foreach ($categorias as $key => $categoria) {
             $categorias[$key]['link'] = route('classificacao.show', ['tipo' => $key]);

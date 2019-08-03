@@ -40,7 +40,7 @@ class ClassificacaoService
 
     public function obterClassificacao($tipo)
     {
-        $categorias = config('constants.categorias');
+        $categorias = config('constantes.categorias');
 
         $classificacao = [];
 
