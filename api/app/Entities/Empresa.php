@@ -6,6 +6,8 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
 class Empresa extends Eloquent
 {
+    protected $table = 'empresa';
+
     protected $fillable = ['razao_social', 'cnpj', 'dados'];
     
     public function licitacoes()
