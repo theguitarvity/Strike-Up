@@ -5,8 +5,8 @@
                 <VCard style="min-height:10em;" >
                     <vContainer style="" >
                         <VCard style="text-align:center; font-weight:bold;width:40%;float:left;margin-right:1em;">
-                            <VIcon style="font-size:3em; color:purple;">mdi-school</VIcon>
-                            <VCardText>Educação</VCardText>
+                            <VIcon style="font-size:3em; color:purple;">{{icone}}</VIcon>
+                            <VCardText>{{titulo}}</VCardText>
                         </VCard>
                         <vContainer style="margin-left:5%;">
                             <h4>Nº de licitações: {{licitacoes.length}}</h4>
@@ -37,6 +37,8 @@ export default {
             avaliacao:0,
             licitacoes:[],
             rangAvaliacao:0,
+            icone: null,
+            titulo: null
        }
     },
     props:{
@@ -46,18 +48,18 @@ export default {
         Licitacoes
     },
     created(){
+        this.icone = this.$route.params.icone
         this.retornaLicitacoes()
     },
     methods:{
         retornaLicitacoes(){
-            let licitacoes = axios.get('http://localhost:86/api/classificacao/educacao').then((response)=>{
+            const {link} = this.$route.params
+            axios.get(link).then((response)=>{
                 console.log(response.data)
                 this.licitacoes = response.data.orgaos.licitacoes;
                 this.avaliacao = parseFloat(response.data.nota);
                 this.rangAvaliacao = parseInt(response.data.nota);
-                
-
-
+                this.titulo = response.data.titulo
             });
         }
     },

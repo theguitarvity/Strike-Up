@@ -40,7 +40,7 @@ class ClassificacaoService
 
     public function obterClassificacao($tipo)
     {
-        $categorias = config('constants.categorias');
+        $categorias = config('constantes.categorias');
 
         $classificacao = [];
 
@@ -96,15 +96,19 @@ class ClassificacaoService
 
     private function criarArrayDeLicitacoesDoOrgao(Orgao $orgao)
     {
-        $licitacoes = $this->licitacaoRepository->model()::where('orgao_id', $orgao->_id)->get();
+        $licitacoes = $this->licitacaoRepository->model()::where('orgao_id', $orgao->_id)->get()->first();
 
         $licitacoesDoOrgao = [];
 
         $licitacoes->each(function($licitacao) use (&$licitacoesDoOrgao) {
+                $empresa = $this->empresaRepository->model()::where('_id' , $licitacao->empresa_id)->get()->first();
+
                 $licitacaoParaRetornar = [
                     'codigo' => $licitacao->codigo,
                     'classificacao_risco' => $this->obterClassificacaoDeRiscoDaLicitacao($licitacao),
-                    'tags' => $this->obterTagsDaLicitacao($licitacao)
+                    'tags' => $this->obterTagsDaLicitacao($licitacao),
+                    'cnpj' => $empresa->cnpj,
+                    'razao_social' => $empresa->razao_social
                 ];
 
                 $licitacoesDoOrgao[] = $licitacaoParaRetornar;

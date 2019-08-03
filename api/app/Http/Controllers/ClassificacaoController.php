@@ -34,13 +34,4 @@ class ClassificacaoController extends Controller
 
         return response()->json($classificacao);
     }
-
-    public function obterClassificacaoDeSeguranca()
-    {}
-
-    public function obterClassificacaoDeInfraEstrutura()
-    {}
-
-    public function obterClassificacaoDeSaude()
-    {}
 }
