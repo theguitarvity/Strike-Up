@@ -9,13 +9,11 @@
 namespace App\Services;
 
 
-use App\Entities\Empresa;
 use App\Helpers\UtilHelper;
 use App\Repositories\Contracts\EmpresaInterfaceRepository;
 use App\Repositories\Contracts\LicitacaoInterfaceRepository;
 use App\Repositories\Contracts\OrgaoInterfaceRepository;
 use League\Csv\Reader;
-use League\Csv\Statement;
 
 class ImportarDadosNoSistemaService
 {
