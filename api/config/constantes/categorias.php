@@ -2,7 +2,7 @@
 return [
     'educacao' => [
         'titulo' => 'Educação',
-        'icone'  => '',
+        'icone'  => 'mdi-school',
         'orgaos' =>
             [
               'SED'
@@ -10,28 +10,28 @@ return [
     ],
     'saude' => [
         'titulo' => 'Saúde',
-        'icone'  => '',
+        'icone'  => 'mdi-heart-outline',
         'orgaos' => [
             'FESA'
         ]
     ],
     'seguranca' => [
         'titulo' => 'Segurança',
-        'icone'  => '',
+        'icone'  => 'mdi-security',
         'orgaos' => [
             'SEJUSP'
         ]
     ],
     'habitacao' => [
-        'titulo' => 'Habitacao',
-        'icone'  => '',
+        'titulo' => 'Habitacão',
+        'icone'  => 'mdi-home',
         'orgaos' => [
             'AGEHAB'
         ]
     ],
     'administracao' => [
         'titulo' => 'Administração',
-        'icone'  => '',
+        'icone'  => 'mdi-finance',
         'orgaos' => [
             'F-PGE',
             'SEFAZ'
@@ -39,7 +39,7 @@ return [
     ],
     'agricultura' => [
         'titulo' => 'Agricultura',
-        'icone'  => '',
+        'icone'  => 'mdi-leaf',
         'orgaos' => [
             'SEMAGRO',
             'IAGRO',
