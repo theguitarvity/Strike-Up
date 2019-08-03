@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Sobre from "@/views/Sobre.vue";
+import Orgao from "@/views/Orgao.vue";
 
 Vue.use(Router);
 
@@ -18,6 +19,11 @@ export default new Router({
       path: "/sobre",
       name: "sobre",
       component:Sobre
+    },
+    {
+      path:"/orgao",
+      name:"orgao",
+      component: Orgao
     }
   ]
 });
