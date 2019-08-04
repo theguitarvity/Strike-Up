@@ -4,7 +4,7 @@
       <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer"/>
       <v-spacer/>
       <router-link to="/">
-        <img src="@/assets/logo_branco.png" alt="logo_branco" srcset="" class="logo-menu">
+        <img src="@/assets/logo_branco.png" alt="logo_branco_grande" srcset="" class="logo-menu">
       </router-link>
     </v-app-bar>
     <v-navigation-drawer

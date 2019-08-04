@@ -16,27 +16,39 @@
                     O Licid também pode auxiliar os orgãos do governo, a fiscalizar os processos de 
                     licitações, com intuito de encontrar a existência de alguma irregularidade.
                 </p>
-                <v-btn
-                  depressed
-                  large
-                  color="purple"
-                  dark
-                  block
-                  class="btn-nav"
-                  href="http://www.tcu.gov.br/arquivosrca/ManualOnLine.htm"
-                  target="_blank"
-                >
-                  <v-icon dark left>mdi-book-open-variant</v-icon>
-                  Legislação
-                </v-btn>
+                
+                <vContainer>
+                    <VFlex style="padding:1em">
+                        <metodoDeCalculo style="margin-botton: 10px;"/>
+                    
+                            <v-btn
+                            
+                            depressed
+                            large
+                            color="purple"
+                            dark
+                            block
+                            class="btn-nav"
+                            href="http://www.tcu.gov.br/arquivosrca/ManualOnLine.htm"
+                            target="_blank"
+                            >
+                            <v-icon dark left>mdi-book-open-variant</v-icon>
+                            Legislação
+                            </v-btn>
+                    </VFlex>
+                </vContainer>
             </VFlex>
         </VLayout>
     </vContainer>
 </template>
 
 <script>
+import metodoDeCalculo from '@/components/MetodoDeCalculo.vue';
 export default {
-    name: 'sobre'
+    name: 'sobre',
+    components:{
+        metodoDeCalculo
+    }
 
 }
 </script>
