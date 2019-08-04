@@ -20,6 +20,12 @@ Para critérios considerados de Alto Risco, é descontada pontuação de 1 ponto
 
 Para compor a nota de cada setor é realizada média das pontuações das suas licitações, gerando assim a nota final.
 
+## Fontes utilizadas para a consulta dos dados
+
+- API de consulta pública das empresas [https://www.hubdodesenvolvedor.com.br/](https://www.hubdodesenvolvedor.com.br/)
+
+- Dados das licitações em CSV [http://www.dados.ms.gov.br/](http://www.dados.ms.gov.br/)
+
 ## Começando
 
 Essas são as instruções e requisitos para inicializar e executar o sistema `#licid` no ambiente de desenvolvimento 
