@@ -30,7 +30,7 @@ Visualizador do Banco de dados `http://localhost:8089`
 
 ## Construído com
 
-* [Laravel](https://laravel.com/) - aravel é um framework PHP livre e open-source.
+* [Laravel](https://laravel.com/) - Laravel é um framework PHP livre e open-source.
 * [MongoDB](https://www.mongodb.com/) - MongoDB é um software de banco de dados orientado a documentos livre, de código aberto e multiplataforma.
 * [VueJS](https://vuejs.org/) - O Vue.js é uma estrutura JavaScript de código aberto para criar interfaces de usuário e aplicativos de página única.
 * [Vuetify](https://vuetifyjs.com/pt-BR/) - Framework de componentes visuais.
