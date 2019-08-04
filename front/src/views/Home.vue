@@ -14,7 +14,7 @@
         </v-flex>
     </v-layout>
     <VLayout v-else>
-      <v-flex>
+      <v-flex style="margin-top: 10rem">
         <Loading />
       </v-flex>
     </VLayout>

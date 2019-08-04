@@ -1,5 +1,5 @@
 <template>
-    <vContainer>
+    <vContainer fluid grid-list-sm>
         <VLayout wrap>
             <VFlex v-if="!loading">
                 <VCard style="min-height:10em;" >
@@ -23,7 +23,7 @@
                 <VSpacer/>
                 <Licitacoes v-bind:licitacoes="licitacoes" style="margin-top:1em"/>
             </VFlex>
-            <VFlex v-else style="position: fixed; width:90%; top:30%;">
+            <VFlex v-else style="margin-top: 10rem">
                 <Loading />
             </VFlex>
         </VLayout>
