@@ -75,7 +75,6 @@ class ImportarDadosNoSistemaService
                         $orgao = $this->orgaoRepository->create(['nome' => $resultado['Orgao']]);
                     }
 
-
                     $this->licitacaoRepository->create(
                         [
                             'valor' => UtilHelper::obterNumero($resultado['Valor_Total_Previsto']),

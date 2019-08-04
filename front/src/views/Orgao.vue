@@ -9,7 +9,7 @@
                             <VCardText>{{titulo}}</VCardText>
                         </VCard>
                         <vContainer style="margin-left:5%;">
-                            <h4>Nº de licitações: {{licitacoes.length}}</h4>
+                            <h4>Nº de licitações: {{licitacoes[0].licitacoes.length}}</h4>
                             <h4>Avaliação: {{avaliacao}}</h4>
                         </vContainer>
                         <v-rating v-model="avaliacao" readonly half-increments ></v-rating>
@@ -21,7 +21,7 @@
                     
                 </VCard>
                 <VSpacer/>
-                <Licitacoes v-bind:licitacoes="licitacoes" style="margin-top:1em"/>
+                <Licitacoes v-bind:licitacoes="licitacoes[0].licitacoes" style="margin-top:1em"/>
             </VFlex>
             <VFlex v-else style="margin-top: 10rem">
                 <Loading />
@@ -63,7 +63,7 @@ export default {
             let link = `http://localhost:86/api/classificacao/${this.$route.params.categoria}`;
             axios.get(link).then((response)=>{
                 console.log(response.data)
-                this.licitacoes = response.data.orgaos.licitacoes;
+                this.licitacoes = response.data.orgaos;
                 this.avaliacao = parseFloat(response.data.nota);
                 this.rangAvaliacao = parseInt(response.data.nota);
                 this.titulo = response.data.categoria.titulo
