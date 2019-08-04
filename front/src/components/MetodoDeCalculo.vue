@@ -27,12 +27,17 @@
           </v-card-title>
   
           <v-card-text style="font-size:18px; padding:2em; text-align:justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Atribuimos uma pontuação de 0 a 5 pontos para o desempenho em processos de licitação em orgãos do governo agrupados em categorias. 
+Para cada licitação são considerados critérios que podem indicar possíveis irregularidades, tais como: 
+
+- (Alto Risco) Baixo capital (Menos de 10%) da empresa em relação ao valor previsto para licitação: #BaixoCapital
+- (Alto Risco) Empresa existente a pouco tempo (Menos de ano em relação ao início do processo de licitação): #EmpresaJovem 
+- (Médio Risco) Valor realizado superior a 25% em relação ao valor previsto da licitação (gastou mais): #GastouMais 
+- (Alto Risco) Valor realizado superior a 35% em relação ao valor previsto da licitação (gastou muito mais): #GastouMuitoMais
+- (Alto Risco) Empresa venceu muitas licitações nos ultimos seis meses (Acima de 5): #VenceuMuitasLicitacoes
+
+Para critérios considerados de Alto Risco, é descontada pontuação de 1 ponto dos 5 iniciais, já para os de Médio Risco são descontados 0,5 pontos.
+Para compor a nota de cada setor é realizada média das pontuações das suas licitações, gerando assim a nota final.
           </v-card-text>
   
           <v-divider></v-divider>
