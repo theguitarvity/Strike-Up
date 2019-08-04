@@ -15,7 +15,9 @@
       <v-container style="background: #f0f0f0" fill-height>
           <v-layout wrap column>
               <v-flex>
-                <img src="@/assets/logo_geral.png" alt="logo-licid" srcset="" class="img-logo">
+                <VFlex>
+                  <img src="@/assets/logo_geral.png" alt="logo-licid" srcset="" class="img-logo">
+                </VFlex>
                 <v-btn
                   depressed
                   large
@@ -79,6 +81,9 @@ export default {
 
 .logo-menu{
   width: 5em;
+}
+.img-logo{
+  width: 15em;
 }
 
 </style>

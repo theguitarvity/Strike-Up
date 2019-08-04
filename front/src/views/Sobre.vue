@@ -3,7 +3,7 @@
         <VLayout wrap>
             
             <VFlex class="center">
-                <img src="@/assets/logo_geral.png" alt="logo-licid" srcset="" class="img-logo">
+                <img src="@/assets/logo_geral.png" alt="logo-licid" srcset="" class="img-logo-sobre">
 
                 <p style="color:#555; text-align:justify;">
                     O Licid é uma plataforma de consulta e análise de licitações no serviço
@@ -43,7 +43,7 @@ export default {
 
 <style>
 
-.img-logo{
+.img-logo-sobre{
     width: 10em;
 }
 .center{
