@@ -1,8 +1,8 @@
 <template>
-  <v-container class="home">
-    <v-layout wrap>
+  <v-container class="home" fluid grid-list-sm>
+    <v-layout wrap v-if="!loading">
         <v-flex
-          style="padding: 5px" 
+          style="padding: 5px"
           v-for="(categoria, key) in categorias"
           :key="key"
           xs6
@@ -13,49 +13,45 @@
           </v-card>
         </v-flex>
     </v-layout>
+    <VLayout v-else>
+      <v-flex>
+        <Loading />
+      </v-flex>
+    </VLayout>
   </v-container>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
+import Loading from "@/components/Loading.vue";
 export default {
-  name: 'home',
+  name: "home",
   data() {
     return {
-      categorias: [
-        {
-          id: 1,
-          nome: 'Educação',
-          icone: 'mdi-school'
-        },
-        {
-          id: 2,
-          nome: 'Saúde',
-          icone: 'mdi-heart-outline'
-        },
-        {
-          id: 3,
-          nome: 'Segurança',
-          icone: 'mdi-security'
-        },
-        {
-          id: 4,
-          nome: 'Infraestrutura',
-          icone: 'mdi-office-building'
-        },
-      ]
-    }
+      loading: true,
+      categorias: []
+    };
   },
   created() {
-    axios.get('http://localhost:86/api/categorias').then(res => {
-      this.categorias = res.data
-    })
+    axios.get("http://localhost:86/api/categorias").then(res => {
+      this.categorias = res.data;
+      this.loading = false;
+    });
   },
   methods: {
     irParaDetalhes(categoria) {
-      const {link, icone} = categoria
-      this.$router.push({name: 'orgao', params: {link, icone}})
+      const { link, icone } = categoria;
+      let chave = Object.keys(this.categorias).find(
+        key => this.categorias[key] == categoria
+      );
+      this.$router.push({
+        path: `/orgao/${chave}`,
+        params: { link, icone }
+      });
     }
+  },
+  components: {
+    Loading
   }
 };
 </script>
@@ -63,7 +59,7 @@ export default {
 <style lang="scss" scoped>
 .home {
   margin: 1rem 0;
-  .card{
+  .card {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,7 +1,7 @@
 <template>
     <vContainer>
         <VLayout wrap>
-            <VFlex>
+            <VFlex v-if="!loading">
                 <VCard style="min-height:10em;" >
                     <vContainer style="" >
                         <VCard style="text-align:center; font-weight:bold;width:40%;float:left;margin-right:1em;">
@@ -9,7 +9,7 @@
                             <VCardText>{{titulo}}</VCardText>
                         </VCard>
                         <vContainer style="margin-left:5%;">
-                            <h4>Nº de licitações: {{licitacoes.length}}</h4>
+                            <h4>Nº de licitações: {{licitacoes[0].licitacoes.length}}</h4>
                             <h4>Avaliação: {{avaliacao}}</h4>
                         </vContainer>
                         <v-rating v-model="avaliacao" readonly half-increments ></v-rating>
@@ -21,7 +21,10 @@
                     
                 </VCard>
                 <VSpacer/>
-                <Licitacoes v-bind:licitacoes="licitacoes" style="margin-top:1em"/>
+                <Licitacoes v-bind:licitacoes="licitacoes[0].licitacoes" style="margin-top:1em"/>
+            </VFlex>
+            <VFlex v-else style="position: fixed; width:90%; top:30%;">
+                <Loading />
             </VFlex>
         </VLayout>
     </vContainer>
@@ -30,6 +33,7 @@
 <script>
 import Licitacoes from '@/components/Licitacoes.vue';
 import axios from 'axios';
+import Loading from '@/components/Loading.vue';
 export default {
     name:'orgao',
     data(){
@@ -38,28 +42,36 @@ export default {
             licitacoes:[],
             rangAvaliacao:0,
             icone: null,
-            titulo: null
+            titulo: null,
+            loading: true,
        }
     },
     props:{
         
     },
     components:{
-        Licitacoes
+        Licitacoes,
+        Loading
     },
     created(){
-        this.icone = this.$route.params.icone
+        
         this.retornaLicitacoes()
     },
     methods:{
         retornaLicitacoes(){
-            const {link} = this.$route.params
+            //const {link} = this.$route.params
+            let link = `http://localhost:86/api/classificacao/${this.$route.params.categoria}`;
             axios.get(link).then((response)=>{
                 console.log(response.data)
-                this.licitacoes = response.data.orgaos.licitacoes;
+                this.licitacoes = response.data.orgaos;
                 this.avaliacao = parseFloat(response.data.nota);
                 this.rangAvaliacao = parseInt(response.data.nota);
-                this.titulo = response.data.titulo
+                this.titulo = response.data.categoria.titulo
+                this.icone = response.data.categoria.icone;
+
+
+                this.loading = false;
+                
             });
         }
     },
