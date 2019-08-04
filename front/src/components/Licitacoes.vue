@@ -16,18 +16,15 @@
                     <v-expansion-panel-content>
                         <h5>Empresa: {{licitacao.razao_social }}</h5>
                         <h5>CNPJ: {{licitacao.cnpj}}</h5>
-                        <h5 >Risco {{licitacao.classificacao_risco.titulo}} na existência de fraude.</h5>
+                        <h5 >Risco {{licitacao.classificacao_risco.titulo}} na existência de indícios de irregularidades.</h5>
 
                         <vContainer grid-list-sm>
                            <VFlex v-for=" (tag, index) in licitacao.tags" :key="index">
-                                <v-chip style="margin:1px"  :color="tag.cor">{{tag.tag}} </v-chip>
+                                <v-chip  style="margin:1px; color:#fff" :color="tag.cor">{{tag.tag}} </v-chip>
                                 <v-chip pill>
-                                    <v-avatar
-                                    left
-                                    :color="tag.cor"
-                                    >
-                                    p
-                                    </v-avatar>
+                                    
+                                    Pontuação:
+                                    
                                     {{tag.pontos}}
                                 </v-chip>
                             </VFlex>
@@ -53,6 +50,9 @@ export default {
     },
     props:{
         licitacoes:Array
+    },
+    methods:{
+        
     }
 }
 </script>
