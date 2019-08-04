@@ -3,3 +3,4 @@ front/dist
 front/node_modules/
 .idea
 api/composer.lock
+front/package-lock.json

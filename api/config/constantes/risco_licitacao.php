@@ -6,7 +6,7 @@ return [
     ],
     'medio' => [
         'titulo' => 'Médio',
-        'cor' => 'yellow'
+        'cor' => 'darkorange'
     ],
     'baixo' => [
         'titulo' => 'Baixo',
