@@ -1,12 +1,17 @@
 <template>
-  <v-container class="home">
+  <v-container class="home" fluid grid-list-sm>
     <v-layout wrap v-if="!loading">
-      <v-flex style="padding: 5px" v-for="(categoria, key) in categorias" :key="key" xs6>
-        <v-card @click="irParaDetalhes(categoria)" class="card" height="150px" link>
-          <v-icon color="purple" :size="80">{{categoria.icone}}</v-icon>
-          <span>{{categoria.titulo}}</span>
-        </v-card>
-      </v-flex>
+        <v-flex
+          style="padding: 5px"
+          v-for="(categoria, key) in categorias"
+          :key="key"
+          xs6
+        >
+          <v-card @click="irParaDetalhes(categoria)" class="card" height="150px" link>
+            <v-icon color="purple" :size="80">{{categoria.icone}}</v-icon>
+            <span>{{categoria.titulo}}</span>
+          </v-card>
+        </v-flex>
     </v-layout>
     <VLayout v-else>
       <v-flex>
