@@ -2,26 +2,31 @@
 return [
     'EmpresaJovem' => [
         'tag' => '#EmpresaJovem',
-        'cor' => 'red'
+        'cor' => 'red',
+        'pontos' => -1.0
     ],
 
     'VenceuMuitasLicitacoes' => [
         'tag' => '#VenceuMuitasLicitacoes',
-        'cor' => 'red'
+        'cor' => 'red',
+        'pontos' => -1.0
     ],
 
     'GastouMais' => [
         'tag' => '#GastouMais',
-        'cor' => 'yellow'
+        'cor' => 'yellow',
+        'pontos' => -0.5
     ],
 
     'GastouMuitoMais' => [
         'tag' => '#GastouMuitoMais',
-        'cor' => 'red'
+        'cor' => 'red',
+        'pontos' => -1.0
     ],
 
     'BaixoCapital' => [
         'tag' => '#BaixoCapital',
-        'cor' => 'red'
+        'cor' => 'red',
+        'pontos' => -1.0
     ]
 ];

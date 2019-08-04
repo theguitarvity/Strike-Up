@@ -20,4 +20,14 @@ class UtilHelper
     {
         return str_replace(',', '.', $value);
     }
+
+    public static function limpaCpfECnpj($valor)
+    {
+        $valor = trim($valor);
+        $valor = str_replace(".", "", $valor);
+        $valor = str_replace(",", "", $valor);
+        $valor = str_replace("-", "", $valor);
+        $valor = str_replace("/", "", $valor);
+        return $valor;
+    }
 }
