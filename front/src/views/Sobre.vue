@@ -13,7 +13,7 @@
                     O objetivo do Licid é auxiliar o cidadão a compreender
                     as licitações ocorrentes no estado de Mato Grosso do sul. Mostrando de forma interativa,
                     os dados existentes nos editais dos processos já realizados. 
-                    O Lecid também pode auxiliar os orgãos do governo, a fiscalizar os processos de 
+                    O Licid também pode auxiliar os orgãos do governo, a fiscalizar os processos de 
                     licitações, com intuito de encontrar a existência de alguma irregularidade.
                 </p>
                 <v-btn
