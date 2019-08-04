@@ -2,7 +2,7 @@
 
 O Licid é uma plataforma de consulta e análise de licitações no serviço público do estado do Mato Grosso do Sul. A plataforma é responsável por analisar fatores de risco em processos de compra e/ou contratação. O objetivo do Licid é auxiliar o cidadão a compreender as licitações ocorrentes no estado de Mato Grosso do sul. Mostrando de forma interativa, os dados existentes nos editais dos processos já realizados. O Licid também pode auxiliar os orgãos do governo, a fiscalizar os processos de licitações, com intuito de encontrar a existência de alguma irregularidade.
 
-Atribuimos uma pontuação de 0 a 5 pontos para o desempenho em processos de licitação em orgãos do governo agrupados em categorias.
+Atribuimos uma pontuação de 0 a 5 pontos para o desempenho em processos de licitação em orgãos o governo agrupados em categorias.
 
 Para cada licitação são considerados critérios que podem indicar possíveis irregularidades, tais como: 
 
@@ -19,6 +19,12 @@ Para cada licitação são considerados critérios que podem indicar possíveis 
 Para critérios considerados de Alto Risco, é descontada pontuação de 1 ponto dos 5 iniciais, já para os de Médio Risco são descontados 0,5 pontos.
 
 Para compor a nota de cada setor é realizada média das pontuações das suas licitações, gerando assim a nota final.
+
+## Fontes utilizadas para a consulta dos dados
+
+- API de consulta pública das empresas [https://www.hubdodesenvolvedor.com.br/](https://www.hubdodesenvolvedor.com.br/)
+
+- Dados das licitações em CSV [http://www.dados.ms.gov.br/](http://www.dados.ms.gov.br/)
 
 ## Começando
 
