@@ -1,4 +1,4 @@
 front/.gitignore
-front/public/
+front/
 .idea
 api/composer.lock

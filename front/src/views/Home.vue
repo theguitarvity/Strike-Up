@@ -1,7 +1,6 @@
 <template>
   <v-container class="home">
     <v-layout wrap v-if="!loading">
-        
           <v-flex
               
               style="padding: 5px" 
@@ -14,8 +13,6 @@
                 <span>{{categoria.titulo}}</span>
               </v-card>
             </v-flex>
-            
-       
     </v-layout>
     <VLayout v-else>
       <v-flex >
